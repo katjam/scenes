@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('settings.scenes', 'ScenesController');
+Route::resource('settings', 'SettingsController');
+Route::resource('characters', 'CharactersController');
+
+Route::bind('characters', function($value, $route) {
+  return App\Task::whereCharacterName($value)->first();
+});
