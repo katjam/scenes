@@ -3,7 +3,7 @@
 namespace Scenes\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Scenes\Scene;
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
 
@@ -16,7 +16,8 @@ class ScenesController extends Controller
      */
     public function index()
     {
-        //
+      $scenes = Scene::all();
+      return view('scenes.index', compact('scenes'));
     }
 
     /**
@@ -32,10 +33,9 @@ class ScenesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -43,33 +43,32 @@ class ScenesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \Scenes\Scene
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Scene $scene)
     {
-        //
+       return view('scenes.show', compact('setting', 'scene'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \Scenes\Scene
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Scene $scene)
     {
-        //
+        return view('scenes.show', compact('setting','scene'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Scenes\Scene
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Scene $scene)
     {
         //
     }
@@ -77,10 +76,10 @@ class ScenesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \Scenes\Scene
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Scene $scene)
     {
         //
     }

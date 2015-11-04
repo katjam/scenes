@@ -11,6 +11,11 @@
 |
 */
 
+// Provide controller methods with object instead of ID
+Route::model('scenes', 'Scene');
+Route::model('settings', 'Setting');
+Route::model('characters', 'Character');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,6 +24,7 @@ Route::resource('settings.scenes', 'ScenesController');
 Route::resource('settings', 'SettingsController');
 Route::resource('characters', 'CharactersController');
 
-Route::bind('characters', function($value, $route) {
-  return App\Task::whereCharacterName($value)->first();
-});
+// @todo want to slug this instead eventually - use slugs rather than IDs in URLs
+//Route::bind('characters', function($value, $route) {
+// return App\Task::whereCharacterName($value)->first();
+//});

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
+use Scenes\Setting;
 
 class SettingsController extends Controller
 {
@@ -16,7 +17,8 @@ class SettingsController extends Controller
      */
     public function index()
     {
-      return view('settings.index');
+      $settings = Setting::all();
+      return view('settings.index', compact('settings'));
     }
 
     /**
@@ -43,33 +45,32 @@ class SettingsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \Scenes\Setting $setting
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Setting $setting)
     {
-        //
+      return view('settings.show', compact('setting'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \Scenes\Setting $setting
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Setting $setting)
     {
-        //
+        return view('settings.edit', compact('setting'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Scenes\Setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Setting $setting)
     {
         //
     }
@@ -77,10 +78,10 @@ class SettingsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param \Scenes\Setting
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Setting $setting)
     {
         //
     }

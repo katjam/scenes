@@ -3,7 +3,7 @@
 namespace Scenes\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Scenes\Character;
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
 
@@ -16,7 +16,8 @@ class CharactersController extends Controller
      */
     public function index()
     {
-        //
+      $characters = Character::all();
+      return view('characters.index', compact('characters'));
     }
 
     /**
@@ -32,10 +33,9 @@ class CharactersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -43,33 +43,32 @@ class CharactersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \Scenes\Character
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Character $character)
     {
-        //
+        return view('characters.show', compact('character'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \Scenes\Character
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Character $character)
     {
-        //
+       return view('characters.edit', compact('character'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Scenes\Character
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Character $character)
     {
         //
     }
@@ -77,10 +76,10 @@ class CharactersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \Scenes\Character
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Character $character)
     {
         //
     }
