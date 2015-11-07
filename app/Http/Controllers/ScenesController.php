@@ -3,7 +3,7 @@
 namespace Scenes\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Scenes\Scene;
+use Scenes\Scene as Scene;
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
 

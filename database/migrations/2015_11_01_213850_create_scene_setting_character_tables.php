@@ -24,7 +24,8 @@ class CreateSceneSettingCharacterTables extends Migration
 	      $table->increments('id');
 	      // @todo - film with id of other scenes to group with this one
 	      $table->char('scn_no', 4);
-	      $table->enum('int_ext', ['INT','EXT']);
+        $table->text('description')->default('');
+        $table->enum('int_ext', ['INT','EXT']);
 	      $table->integer('setting_id')->unsigned()->default(0);
 	      $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
 	      $table->enum('day_night', ['day', 'night', 'evening', 'dawn', 'dusk']);

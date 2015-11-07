@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('settings.scenes', 'ScenesController');
+Route::resource('scenes', 'ScenesController');
 Route::resource('settings', 'SettingsController');
 Route::resource('characters', 'CharactersController');
 
