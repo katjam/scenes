@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call('SettingsTableSeeder');
         $this->call('ScenesTableSeeder');
         $this->call('CharactersTableSeeder');
+        $this->call('CharactersScenesTableSeeder');
 
         Model::reguard();
     }
