@@ -1,4 +1,8 @@
 @extends('html')
 @section('content')
-  Hello my new content
+  <ul>
+  @foreach ($settings as $setting)
+    <li>{{ $setting->set_name }}</li>
+  @endforeach
+  </ul>
 @endsection
