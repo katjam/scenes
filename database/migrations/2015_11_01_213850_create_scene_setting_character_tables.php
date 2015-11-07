@@ -29,7 +29,8 @@ class CreateSceneSettingCharacterTables extends Migration
 	      $table->integer('setting_id')->unsigned()->default(0);
 	      $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
 	      $table->enum('day_night', ['day', 'night', 'evening', 'dawn', 'dusk']);
-	      $table->integer('story_day');
+        $table->integer('page_count')->unsigned()->default(0);
+        $table->integer('story_day');
         $table->timestamps();
       });
       Schema::create('characters', function (Blueprint $table) {

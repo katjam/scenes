@@ -15,4 +15,11 @@ class Scene extends Model
   public function characters() {
     return $this->belongsToMany('Scenes\Character', 'character_scene', 'scene_id', 'character_id');
   }
+
+  public function page_eights() {
+    $whole_page = floor($this->page_count/8);
+    $eights = fmod($this->page_count, 8);
+    return $whole_page .' ' . $eights .'/8';
+  }
+
 }

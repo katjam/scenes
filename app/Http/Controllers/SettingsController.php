@@ -50,7 +50,14 @@ class SettingsController extends Controller
      */
     public function show(Setting $setting)
     {
-      return view('settings.show', compact('setting'));
+      $scns = $setting->scenes;
+      $count = 0;
+      foreach ($scns as $s) {
+        $count += $s->page_count;
+      }
+      $page_count = floor($count / 8) . ' '. fmod($count, 8) . '/8';
+
+      return view('settings.show', compact('setting', 'page_count'));
     }
 
     /**

@@ -11,5 +11,4 @@ class Setting extends Model
     public function scenes() {
       return $this->hasMany('Scenes\Scene');
     }
-
 }

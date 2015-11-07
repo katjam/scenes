@@ -1,5 +1,6 @@
 @extends('html')
 @section('content')
+    <p>Total Page: {{ $page_count }}</p>
     <p>{{ $setting->set_name }}</p>
     <p>{{ $setting->location }}</p>
     <p>{{ $setting->notes}}</p>

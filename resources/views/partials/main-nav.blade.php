@@ -1,6 +1,6 @@
 <ul class="main-nav">
 	<li>
-  	<a href="/settings/scenes">Scenes</a>
+  	<a href="/scenes">Scenes</a>
 	</li>
 	<li>
 		<a href="/settings">Settings</a>
