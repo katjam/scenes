@@ -1,0 +1,46 @@
+body {
+
+}
+
+header {
+
+}
+
+nav .container .brand {
+  float: left;
+  width: 25%;
+}
+
+ul.main-nav {
+ display:block;
+ float: right;
+  width: 70%;
+}
+
+ul.main-nav li {
+  list-style: none;
+  float:left;
+  width: 170px;
+  background: #186f63;
+  margin: 2px;
+  padding: 8px;
+}
+
+ul.main-nav li a {
+  font-size: 1.2em;
+  color: #ffd;
+  text-align: center;
+}
+
+div.main {
+  clear: both;
+}
+
+footer {
+  font-size: small;
+}
+
+li {
+}
+
+
