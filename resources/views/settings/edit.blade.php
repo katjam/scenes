@@ -1,8 +1,9 @@
 @extends('html')
 @section('content')
 
-{!! Form::model(new Scenes\Setting, array('route' => array('settings.store'))) !!}
+{!! Form::model($setting, array('route' => array('settings.update', $setting->id), 'value' => 'PUT')) !!}
 
+    <input type="hidden" name="_method" value="PUT">
     <!--set name -->
     {!! Form::label('set_name', 'Set Name') !!}
     {!! Form::text('set_name') !!}

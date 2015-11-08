@@ -3,6 +3,8 @@
 namespace Scenes\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use Redirect;
 
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
@@ -39,7 +41,9 @@ class SettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+			Setting::create($request->all());
+			//@todo add seesion flash message success create
+			return Redirect::to('settings');
     }
 
     /**
@@ -77,13 +81,15 @@ class SettingsController extends Controller
      * @param  \Scenes\Setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Setting $setting)
+    public function update(Request $request, Setting $setting)
     {
-        //
-    }
+      $setting->fill($request->all())->save();
+			Session::flash('message', 'Successfully updated nerd!');
+            return Redirect::to('settings');
+		}
 
-    /**
-     * Remove the specified resource from storage.
+		/**
+		 * Remove the specified resource from storage.
      *
      * @param \Scenes\Setting
      * @return \Illuminate\Http\Response
