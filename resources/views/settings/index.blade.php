@@ -12,7 +12,7 @@
   <h1>Settings</h1>
   <ul>
   @foreach ($settings as $setting)
-    <li><a href="settings/{{ $setting->id }}">{{ $setting->set_name }}</a> <a href="settings/{{ $setting->id }}/edit">edit</a></li>
+    <li>{{ $setting->set_name }}<a href="settings/{{ $setting->id }}">view</a> <a href="settings/{{ $setting->id }}/edit">edit</a></li>
   @endforeach
   </ul>
   <p><a href="settings/create">new Setting</a>

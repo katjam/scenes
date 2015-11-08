@@ -6,6 +6,10 @@ header {
 
 }
 
+a {
+  text-decoration: none;
+}
+
 nav .container .brand {
   float: left;
   width: 25%;
@@ -21,19 +25,38 @@ ul.main-nav li {
   list-style: none;
   float:left;
   width: 170px;
-  background: #186f63;
+  background: slategrey;
   margin: 2px;
   padding: 8px;
+  text-align: center;
 }
 
 ul.main-nav li a {
   font-size: 1.2em;
   color: #ffd;
-  text-align: center;
+}
+
+ul.main-nav li a:hover {
+  color: #ddd;
 }
 
 div.main {
   clear: both;
+  min-height: 400px;
+}
+
+div.main a {
+  background: cadetblue;
+  font-size: small;
+  font-weight: 700;
+  color: palegreen;
+  padding: 2px;
+  margin-left: 4px;
+  border-radius: 17%;
+}
+
+div.main a:hover{
+  color: pink;
 }
 
 footer {
