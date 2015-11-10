@@ -27,7 +27,7 @@ class ScenesController extends Controller
      */
     public function create()
     {
-        //
+        return view('scenes.create');
     }
 
     /**
