@@ -59,6 +59,21 @@ div.main a:hover{
   color: pink;
 }
 
+/*** FORMS  ***/
+label,
+input {
+  display: block;
+  width: 48%;
+}
+
+input {
+  margin-bottom: 20px;
+}
+
+input[type="radio"] {
+  width: auto;
+}
+
 footer {
   font-size: small;
 }
