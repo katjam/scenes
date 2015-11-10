@@ -2,6 +2,8 @@
 
 namespace Scenes\Http\Controllers;
 
+use Session;
+use Redirect;
 use Illuminate\Http\Request;
 use Scenes\Character;
 use Scenes\Http\Requests;
@@ -27,7 +29,7 @@ class CharactersController extends Controller
      */
     public function create()
     {
-        //
+        return view('characters.create');
     }
 
     /**
@@ -35,9 +37,10 @@ class CharactersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+      Character::create($request->all());
+      return Redirect::to('characters');
     }
 
     /**
@@ -48,7 +51,13 @@ class CharactersController extends Controller
      */
     public function show(Character $character)
     {
-        return view('characters.show', compact('character'));
+        $scns = $character->scenes;
+        $count = 0;
+        foreach ($scns as $s) {
+          $count += $s->page_count;
+        }
+        $page_count = floor($count /8) . ' ' . fmod($count, 8) . '/8';
+        return view('characters.show', compact('character', 'page_count'));
     }
 
     /**
@@ -68,9 +77,11 @@ class CharactersController extends Controller
      * @param  \Scenes\Character
      * @return \Illuminate\Http\Response
      */
-    public function update(Character $character)
+    public function update(Request $request, Character $character)
     {
-        //
+      $character->fill($request->all())->save();
+      Session::flash('message', 'Successfully updated Character!');
+      return Redirect::to('characters');
     }
 
     /**

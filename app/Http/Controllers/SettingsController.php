@@ -42,7 +42,7 @@ class SettingsController extends Controller
     public function store(Request $request)
     {
 			Setting::create($request->all());
-			//@todo add seesion flash message success create
+			//@todo add session flash message success create
 			return Redirect::to('settings');
     }
 
@@ -84,8 +84,8 @@ class SettingsController extends Controller
     public function update(Request $request, Setting $setting)
     {
       $setting->fill($request->all())->save();
-			Session::flash('message', 'Successfully updated nerd!');
-            return Redirect::to('settings');
+			Session::flash('message', 'Successfully updated Setting!');
+      return Redirect::to('settings');
 		}
 
 		/**
