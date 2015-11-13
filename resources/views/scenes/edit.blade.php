@@ -1,7 +1,9 @@
 @extends('html')
 @section('content')
 
-{!! Form::model(new Scenes\Scene, array('route' => array('scenes.store'))) !!}
+{!! Form::model($scene, array('route' => array('scenes.update', $scene->id), 'value' => 'PUT')) !!}
+
+    <input type="hidden" name="_method" value="PUT">
 
     <!-- scn number -->
     {!! Form::label('scn_no', 'Scene Number') !!}
@@ -18,7 +20,7 @@
       {!! Form::radio('int_ext', 'INT', false) !!}
     </div>
     <div>
-      {!! Form::label('int_ext', 'ext') !!}
+      {!! Form::label('int_ext', 'Ext') !!}
       {!! Form::radio('int_ext', 'EXT', false) !!}
     </div>
     <h3>Setting</h3>
@@ -49,7 +51,7 @@
 
    <!-- page count -->
     {!! Form::label('page_count', 'Page Count Eights') !!}
-    {!! Form::number('page_count', '') !!} /8
+    {!! Form::number('page_count') !!} /8
    <!-- story day -->
     {!! Form::label('story_day', 'Story Day') !!}
     {!! Form::number('story_day') !!}

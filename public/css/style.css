@@ -60,18 +60,15 @@ div.main a:hover{
 }
 
 /*** FORMS  ***/
-label,
 input {
   display: block;
-  width: 48%;
+  //width: 48%;
 }
 
-input {
-  margin-bottom: 20px;
-}
-
+input[type="checkbox"],
 input[type="radio"] {
   width: auto;
+  float: left;
 }
 
 footer {

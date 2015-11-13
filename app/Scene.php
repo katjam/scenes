@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Scene extends Model
 {
-  protected $fillable = array('scn_no', 'int_ext', 'setting_id', 'day_night', 'story_day');
+  protected $fillable = array('scn_no', 'description', 'int_ext', 'setting_id', 'day_night', 'page_count', 'story_day');
 
   public function setting() {
     return $this->belongsTo('Scenes\Setting');
