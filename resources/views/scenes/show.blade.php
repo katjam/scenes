@@ -4,9 +4,10 @@
     <p>{{ $scene->scn_no }}</p>
     <p>{{ $scene->int_ext }}</p>
     <p>{{ $scene->setting->set_name }}</p>
-    <p>
+    <p>{{ $scene->description }}</p>
+    <ul>
     @foreach ($scene->characters as $character)
-      {{ $character->character_name }}
-    @endforeach
-</p>
+      <li>{{ $character->character_name }}</li>
+      @endforeach
+    </ul>
 @endsection
