@@ -1,6 +1,6 @@
 @extends('html')
 @section('content')
-
+<h1>Edit Scene</h1>
 {!! Form::model($scene, array('route' => array('scenes.update', $scene->id), 'value' => 'PUT')) !!}
 
     <input type="hidden" name="_method" value="PUT">

@@ -1,6 +1,6 @@
 @extends('html')
 @section('content')
-
+<h1>Create new Scene</h1>
 {!! Form::model(new Scenes\Scene, array('route' => array('scenes.store'))) !!}
 
     <!-- scn number -->

@@ -1,5 +1,6 @@
 @extends('html')
 @section('content')
+<h1>Scenes</h1>
   <ul>
   @foreach ($scenes as $scene)
     <li>{{ $scene->scn_no }} {{ $scene->int_ext }} {{ $scene->setting->set_name }} - {{ $scene->day_night }} {{ $scene->page_eights() }}
