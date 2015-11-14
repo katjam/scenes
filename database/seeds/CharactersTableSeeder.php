@@ -10,8 +10,8 @@ class CharactersTableSeeder extends Seeder {
     DB::table('characters')->delete();
 
     $cast = array(
-      ['id' => 1, 'character_name' => 'MAY', 'description' => '4 years old, blonde', 'actor' => 'Julie June', 'contact' => 'Agent - Gearge Mellors, 0778876543', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-      ['id' => 2, 'character_name' => 'HOWL', 'description' => 'magic boy', 'actor' => 'John Jones', 'contact' => '0778876543', 'created_at' => new DateTime, 'updated_at' => new DateTime]
+      ['id' => 1, 'character_name' => 'MAY', 'cast_type' => 'main' ,'description' => '4 years old, blonde', 'actor' => 'Julie June', 'contact' => 'Agent - Gearge Mellors, 0778876543', 'created_at' => new DateTime, 'updated_at' => new DateTime],
+      ['id' => 2, 'character_name' => 'HOWL', 'cast_type' => 'supporting', 'description' => 'magic boy', 'actor' => 'John Jones', 'contact' => '0778876543', 'created_at' => new DateTime, 'updated_at' => new DateTime]
     );
     DB::table('characters')->insert($cast);
   }

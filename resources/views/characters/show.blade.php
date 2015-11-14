@@ -2,6 +2,7 @@
 @section('content')
     <p>Total Page: {{ $page_count }}</p>
     <p>{{ $character->character_name }}</p>
+    <p>{{ $character->cast_type }}</p>
     <p>{{ $character->description }}</p>
     <p>{{ $character->actor }}</p>
     <p>{{ $character->contact }}</p>

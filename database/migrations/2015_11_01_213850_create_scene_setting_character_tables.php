@@ -36,7 +36,8 @@ class CreateSceneSettingCharacterTables extends Migration
       Schema::create('characters', function (Blueprint $table) {
 	      $table->increments('id');
 	      $table->string('character_name')->default('');
-	      $table->text('description')->default('');
+        $table->enum('cast_type', ['main', 'supporting']);
+        $table->text('description')->default('');
 	      $table->string('actor')->default('');
 	      $table->text('contact')->default('');
         $table->timestamps();

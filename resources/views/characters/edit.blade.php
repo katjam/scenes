@@ -8,6 +8,16 @@
     {!! Form::label('character_name', 'character Name') !!}
     {!! Form::text('character_name') !!}
 
+    <!-- cast type -->
+    <div>
+    {!! Form::label('cast_type', 'Main') !!}
+    {!! Form::radio('cast_type', 'main', false) !!}
+    </div>
+    <div>
+    {!! Form::label('cast_type', 'Supporting') !!}
+    {!! Form::radio('cast_type', 'supporting', false) !!}
+    </div>
+
     <!-- description -->
     {!! Form::label('description', 'Description') !!}
     {!! Form::textarea('description') !!}
