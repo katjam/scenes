@@ -59,6 +59,11 @@ div.main a:hover{
   color: pink;
 }
 
+/** Scene Strips**/
+.strips {
+  font-size: small;
+}
+
 /** Forms **/
 
  input[type="text"],
@@ -258,3 +263,9 @@ input:not([type]) {
     margin: 0.25em 0;
 }
 
+
+@media print{
+  .no-print {
+    display: none;
+  }
+}

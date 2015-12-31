@@ -18,8 +18,11 @@ class ScenesController extends Controller
      */
     public function index()
     {
-      $scenes = Scene::all();
-      return view('scenes.index', compact('scenes'));
+			$scenes = Scene::all()->sortBy(function ($scene, $key) {
+				// todo order by subscenes (a, b, c). Currently they appear before original
+				return intval($scene['scn_no']);
+			});
+			return view('scenes.index', compact('scenes'));
     }
 
     /**

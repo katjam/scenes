@@ -12,13 +12,13 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <link rel="apple-touch-icon" href="/favicon.png">
-  <link href="<?= url('css/style.css');?>" rel="stylesheet" media="all">
+  <link href="<?= url('css/style.css');?>" rel="stylesheet">
 </head>
 <body class="@yield('body-class', 'docs') language-php">
 
   <span class="overlay"></span>
 
-  <nav class="main">
+  <nav class="main no-print">
     <div class="container">
       <a href="/" class="brand">
       SCENES LOGO
@@ -30,7 +30,7 @@
   @yield('content')
   </div>
 
-  <footer class="main">
+  <footer class="main no-print">
     <p>Scenes is a trademark of Katjam. Copyright &copy; Katja Mordaunt.</p>
     <p class="less-significant"><a href="http://katj.am">Design by Katja Mordaunt</a></p>
   </footer>
