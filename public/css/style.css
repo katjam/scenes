@@ -64,6 +64,39 @@ div.main a:hover{
   font-size: small;
 }
 
+.strips>li {
+  border: solid 1px black;
+  list-style: none;
+  padding: 0 6px;
+}
+
+.strips span {
+  display: inline-block;
+  padding: 4px;
+}
+
+.strips li .boxed {
+  border-right: solid 1px black;
+}
+
+.strips .scn-no {
+  font-size: x-large;
+  width: 50px;
+}
+
+.strips .set-desc {
+  width: 600px;
+}
+
+.strips .setting {
+  text-transform: uppercase;
+  padding: 0;
+}
+
+.strips .description {
+  display: block;
+}
+
 /** Forms **/
 
  input[type="text"],
