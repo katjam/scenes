@@ -68,15 +68,12 @@ div.main a:hover{
   border: solid 1px black;
   list-style: none;
   padding: 0 6px;
+  width: 900px;
 }
 
 .strips span {
   display: inline-block;
   padding: 4px;
-}
-
-.strips li .boxed {
-  border-right: solid 1px black;
 }
 
 .strips .scn-no {
@@ -85,7 +82,9 @@ div.main a:hover{
 }
 
 .strips .set-desc {
-  width: 600px;
+  width: 500px;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
 }
 
 .strips .setting {
@@ -95,6 +94,11 @@ div.main a:hover{
 
 .strips .description {
   display: block;
+  font-size: x-small;
+}
+
+.strips .characters {
+  max-width: 175px;
 }
 
 /** Forms **/
@@ -299,6 +303,6 @@ input:not([type]) {
 
 @media print{
   .no-print {
-    display: none;
+    display: none !important;
   }
 }
