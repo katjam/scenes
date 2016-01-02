@@ -1,6 +1,7 @@
 @extends('html')
 @section('content')
-<h1>Scenes</h1>
+<h1>Scenes by number</h1>
+<a href="scenes/create" class="no-print">new Scene</a>
   <ul class="strips">
   @foreach ($scenes as $scene)
     <li>
@@ -19,5 +20,5 @@
     </li>
   @endforeach
   </ul>
-<a href="scenes/create">new Scene</a>
+<a href="scenes/create" class="no-print">new Scene</a>
 @endsection
