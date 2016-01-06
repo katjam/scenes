@@ -1,9 +1,11 @@
 @extends('html')
 @section('content')
-<h1>Scenes by number</h1>
+<h2>Year of the Goat - By Location</h2>
 <a href="scenes/create" class="no-print">new Scene</a>
   <ul class="strips">
-  @foreach ($scenes as $scene)
+@foreach ($scenes as $key => $scns)
+<h3>{{ $key }}</h3>
+@foreach ($scns as $scene)
     <li>
       <span class="no-print"><a href ="scenes/{{ $scene->id }}">view</a> <a href="scenes/ {{ $scene->id }}/edit">edit</a></span>
 
@@ -18,7 +20,8 @@
       <span class="characters">@foreach ($scene->characters as $cast) {{ $cast->character_name }}, @endforeach </span>
 
     </li>
-  @endforeach
+	@endforeach
+	@endforeach
   </ul>
 <a href="scenes/create" class="no-print">new Scene</a>
 @endsection
