@@ -50,9 +50,9 @@
    <!-- page count -->
     {!! Form::label('page_count', 'Page Count Eights') !!}
     {!! Form::number('page_count', '') !!} /8
-   <!-- story day -->
-    {!! Form::label('story_day', 'Story Day') !!}
-    {!! Form::number('story_day') !!}
+   <!-- filming day -->
+    {!! Form::label('filming_day', 'Filming Day') !!}
+    {!! Form::number('filming_day') !!}
 
     {!! Form::submit('Update Setting') !!}
 
