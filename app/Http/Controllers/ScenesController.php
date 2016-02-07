@@ -6,8 +6,10 @@ use Redirect;
 use Illuminate\Http\Request;
 use Scenes\Scene as Scene;
 use Scenes\Character_Scene as Character_Scene;
+use Scenes\Setting as Setting;
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ScenesController extends Controller
 {
@@ -17,11 +19,28 @@ class ScenesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+		{
 			$scenes = Scene::all()->sortBy(function ($scene, $key) {
 				// todo order by subscenes (a, b, c). Currently they appear before original
-				return intval($scene['scn_no']);
-			});
+				if (preg_match('/a$/', $scene['scn_no'])) {
+				  return intval($scene['scn_no']) + 0.1;
+				}
+				if (preg_match('/b$/', $scene['scn_no'])) {
+				  return intval($scene['scn_no']) + 0.2;
+				}
+			  if (preg_match('/c$/', $scene['scn_no'])) {
+				  return intval($scene['scn_no']) + 0.3;
+				}
+			  if (preg_match('/d$/', $scene['scn_no'])) {
+				  return intval($scene['scn_no']) + 0.4;
+				}
+			  if (preg_match('/e$/', $scene['scn_no'])) {
+				  return intval($scene['scn_no']) + 0.5;
+				} else {
+
+					return intval($scene['scn_no']);
+			  }
+			})->groupBy((function ($item, $key) { return Setting::find($item['setting_id'])->set_name; }));
 			return view('scenes.index', compact('scenes'));
     }
 
