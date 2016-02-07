@@ -48,11 +48,10 @@ div.main {
 div.main a {
   background: cadetblue;
   font-size: small;
-  font-weight: 700;
   color: palegreen;
-  padding: 2px;
+  padding: 1px 6px;
   margin-left: 4px;
-  border-radius: 17%;
+  border-radius: 10px;
 }
 
 div.main a:hover{
