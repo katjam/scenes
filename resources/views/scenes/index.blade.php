@@ -1,6 +1,6 @@
 @extends('html')
 @section('content')
-<h2>Year of the Goat - By Location</h2>
+<h2>{{ env('SITE_NAME', 'Please add SITE_NAME to .env') }} - By Location</h2>
 <a href="scenes/create" class="no-print">new Scene</a>
   <ul class="strips">
 @foreach ($scenes as $key => $scns)
