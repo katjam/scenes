@@ -13,7 +13,7 @@ class Scene extends Model
   }
 
   public function characters() {
-    return $this->belongsToMany('Scenes\Character', 'character_scene', 'scene_id', 'character_id');
+    return $this->belongsToMany('Scenes\Character', 'character_scene', 'scene_id', 'character_id')->withTimestamps();
   }
 
   public function page_eights() {
