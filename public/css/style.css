@@ -187,10 +187,11 @@ since IE8 won't execute CSS that contains a CSS3 selector.
     outline: 1px auto #129FEA;
 }
 
+input[name="page_count"]#page_count,
 .checkbox,
 .radio {
     margin: 0.5em 0;
-    display: block;
+    display: inline-block;
 }
 
  input[type="text"][disabled],
@@ -253,6 +254,7 @@ select[multiple] {
 }
 label {
     margin: 0.5em 0 0.2em;
+    font-weight: 700;
 }
 fieldset {
     margin: 0;
