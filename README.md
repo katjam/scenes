@@ -6,3 +6,4 @@ php composer.phar install
 php artisan key:generate
 
 php artisan migrate
+sudo chown -R http:http storage
