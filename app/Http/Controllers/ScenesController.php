@@ -10,6 +10,7 @@ use Scenes\Setting as Setting;
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class ScenesController extends Controller
 {
@@ -20,7 +21,7 @@ class ScenesController extends Controller
      */
     public function index()
 		{
-			$scenes = Scene::all()->sortBy(function ($scene, $key) {
+			$sort_scenes = Scene::all()->sortBy(function ($scene, $key) {
 				// todo order by subscenes (a, b, c). Currently they appear before original
 				if (preg_match('/a$/', $scene['scn_no'])) {
 				  return intval($scene['scn_no']) + 0.1;
@@ -40,7 +41,22 @@ class ScenesController extends Controller
 
 					return intval($scene['scn_no']);
 			  }
-			})->groupBy((function ($item, $key) { return Setting::find($item['setting_id'])->set_name; }));
+			});
+			// Default collection to sort by scene number
+			$sort = Input::get('sort') ? Input::get('sort') : 'story';
+			switch ($sort) {
+			case('location'):
+			  $scenes = $sort_scenes->groupBy((function ($item, $key) { return Setting::find($item['setting_id'])->set_name; }));
+				break;
+			case('shoot day'):
+				$scenes = $sort_scenes->groupBy('filming_day');
+				break;
+			case('story'):
+			default:
+			  $scenes['Story order'] = $sort_scenes;
+				break;
+
+			}
 			return view('scenes.index', compact('scenes'));
     }
 
