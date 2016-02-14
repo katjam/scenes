@@ -40,11 +40,12 @@
 
     <!-- page count -->
     {!! Form::label('page_count', 'Page Count Eights') !!}
-    {!! Form::number('page_count', '') !!} /8
+    {!! Form::number('page_count') !!} /8
 
     <label>Characters</label>
-    @foreach ($characters as $character)
-    <div>{!! Form::checkbox('character_id[]', $character->id) !!} {!! $character->character_name !!}</div>
+
+    @foreach ($all_characters as $character)
+    <div>{!! Form::checkbox('character_id[]', $character->id, in_array($character->id, $scn_chars)) !!} {!! $character->character_name !!}</div>
     @endforeach
 
     <!-- description -->

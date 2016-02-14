@@ -93,9 +93,9 @@ class ScenesController extends Controller
     public function edit(Scene $scene)
     {
       $settings = \Scenes\Setting::lists('set_name', 'id');
-      $characters = \Scenes\Character::all();
-      // @todo set value of existing chars
-      return view('scenes.edit', compact('settings', 'scene', 'characters'));
+      $all_characters = \Scenes\Character::all();
+      $scn_chars = $scene->characters->lists('id')->all();
+      return view('scenes.edit', compact('settings', 'scene', 'all_characters', 'scn_chars'));
     }
 
     /**
@@ -117,7 +117,7 @@ class ScenesController extends Controller
         }
       }
       $scene->characters()->sync($char_arr);
-      Redirect::to('scenes');
+      return Redirect::to('scenes');
     }
 
     /**
