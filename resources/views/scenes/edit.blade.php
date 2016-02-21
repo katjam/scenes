@@ -56,7 +56,7 @@
     {!! Form::label('filming_day', 'Filming Day') !!}
     {!! Form::number('filming_day') !!}
 
-    {!! Form::submit('Update Setting') !!}
+    {!! Form::submit('Update Scene') !!}
 
 {!! Form::close() !!}
 @endsection
