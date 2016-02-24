@@ -46,7 +46,7 @@ class ScenesController extends Controller
 			$sort = Input::get('sort') ? Input::get('sort') : 'story';
 			switch ($sort) {
 			case('location'):
-			  $scenes = $sort_scenes->groupBy((function ($item, $key) { return Setting::find($item['setting_id'])->set_name; }))->sortBy(function ($item, $key) { return $key; });
+			  $scenes = $sort_scenes->groupBy((function ($item, $key) { $setting =  Setting::find($item['setting_id']); return $setting->location . ' ' . $setting->set_name; }))->sortBy(function ($item, $key) { return $key; });
 				break;
 			case('shoot day'):
 				$scenes = $sort_scenes->groupBy('filming_day')->sortBy(function ($item, $key) { return $key; });
