@@ -13,7 +13,7 @@
   <a href="settings/create">new Setting</a>
   <ul>
   @foreach ($settings as $setting)
-    <li>{{ $setting->set_name }}<a href="settings/{{ $setting->id }}">view</a> <a href="settings/{{ $setting->id }}/edit">edit</a></li>
+    <li>{{ $setting->location}} - {{ $setting->set_name }}<span class="no-print"><a href="settings/{{ $setting->id }}">view</a> <a href="settings/{{ $setting->id }}/edit">edit</a></span></li>
   @endforeach
   </ul>
   <a href="settings/create">new Setting</a>

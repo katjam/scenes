@@ -19,7 +19,9 @@ class SettingsController extends Controller
      */
     public function index()
     {
-      $settings = Setting::all();
+			$settings = Setting::all()->sortBy(function($setting) {
+				return sprintf('%-12s%s', $setting->location, $setting->set_name);
+			});
       return view('settings.index', compact('settings'));
     }
 
