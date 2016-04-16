@@ -1,13 +1,13 @@
 @extends('html')
 @section('content')
-    <p>Total Page: {{ $page_count }}</p>
+    <p>Total Pages: {{ $page_count }}</p>
     <h1>{{ $character->character_name }}</h1>
     <p>{{ $character->cast_type }}</p>
     <p>{{ $character->description }}</p>
     <p>{{ $character->actor }}</p>
     <p>{{ $character->contact }}</p>
     <ul class="strips">
-        @foreach ($character->scenes as $scn)
+        @foreach ($scns as $scn)
         <li>
             <span class="scn-no">{{ $scn->scn_no }}</span>
             <span class="set-desc">
