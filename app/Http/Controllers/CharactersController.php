@@ -51,13 +51,13 @@ class CharactersController extends Controller
      */
     public function show(Character $character)
     {
-        $scns = $character->scenes;
+        $scns = $character->scenes->sortBy('setting_id');
         $count = 0;
         foreach ($scns as $s) {
           $count += $s->page_count;
         }
         $page_count = floor($count /8) . ' ' . fmod($count, 8) . '/8';
-        return view('characters.show', compact('character', 'page_count'));
+        return view('characters.show', compact('scns', 'character', 'page_count'));
     }
 
     /**
