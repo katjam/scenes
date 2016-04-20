@@ -5,6 +5,7 @@ namespace Scenes\Http\Controllers;
 use Session;
 use Redirect;
 use Illuminate\Http\Request;
+use Scenes\Scene;
 use Scenes\Character;
 use Scenes\Http\Requests;
 use Scenes\Http\Controllers\Controller;
@@ -52,11 +53,7 @@ class CharactersController extends Controller
     public function show(Character $character)
     {
         $scns = $character->scenes->sortBy('setting_id');
-        $count = 0;
-        foreach ($scns as $s) {
-          $count += $s->page_count;
-        }
-        $page_count = floor($count /8) . ' ' . fmod($count, 8) . '/8';
+        $page_count = Scene::page_count($scns);
         return view('characters.show', compact('scns', 'character', 'page_count'));
     }
 

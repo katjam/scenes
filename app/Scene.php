@@ -22,4 +22,12 @@ class Scene extends Model
     return $whole_page .' ' . $eights .'/8';
   }
 
+  public static function page_count($scenes) {
+    $count = 0;
+    foreach ($scenes as $s) {
+      $count += $s->page_count;
+    }
+    return floor($count/8) . ' ' . fmod($count,8) . '/8';
+  }
+
 }

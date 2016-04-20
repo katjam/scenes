@@ -1,13 +1,14 @@
 @extends('html')
 @section('content')
-<h2>{{ env('SITE_NAME', 'Please add SITE_NAME to .env') }} - by {{ Input::get('sort') }}</h2>
+<h1>{{ env('SITE_NAME', 'Please add SITE_NAME to .env') }} - by {{ Input::get('sort') }}</h1>
 <div class="no-print">List by <a href="scenes?sort=location">Location</a> <a href="scenes?sort=story">Story Order</a> <a href="scenes?sort=shoot%20day">Shooting Day</a></div>
 
 <a href="scenes/create" class="no-print">new Scene</a>
 	<div class="strips">
 		@foreach ($scenes as $key => $scns)
         <div class="no-break">
-        <h3>{{ $key }}</h3>
+        <h2>{{ $key }}</h2>
+        <h3>Page count: {{ Scenes\Scene::page_count($scns) }}</h3>
         <ul>
 			@foreach ($scns as $scene)
 			<li>

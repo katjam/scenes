@@ -59,8 +59,19 @@ div.main a:hover{
 }
 
 /** Scene Strips**/
+.strips h2,
 .strips h3 {
-  margin: 20px 0 8px 45px;
+  margin-left: 45px;
+}
+
+.strips h2 {
+  margin-top: 25px;
+  margin-bottom: 4px;
+}
+
+.strips h3 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .strips {
