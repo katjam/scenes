@@ -49,7 +49,7 @@ class ScenesController extends Controller
 			  $scenes = $sort_scenes->groupBy((function ($item, $key) { $setting =  Setting::find($item['setting_id']); return $setting->location . ' ' . $setting->set_name; }))->sortBy(function ($item, $key) { return $key; });
 				break;
 			case('shoot day'):
-				$scenes = $sort_scenes->groupBy('filming_day')->sortBy(function ($item, $key) { return $key; });
+				$scenes = $sort_scenes->groupBy('filming_day')->sortBy(function ($item, $key) { return intval($key); });
 				break;
 			case('story'):
 			default:

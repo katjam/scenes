@@ -310,7 +310,7 @@ input:not([type]) {
   .no-print {
     display: none !important;
   }
-  h3+ul {
+  .no-break {
     page-break-inside: avoid;
   }
 }

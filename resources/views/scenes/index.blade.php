@@ -6,6 +6,7 @@
 <a href="scenes/create" class="no-print">new Scene</a>
 	<div class="strips">
 		@foreach ($scenes as $key => $scns)
+        <div class="no-break">
         <h3>{{ $key }}</h3>
         <ul>
 			@foreach ($scns as $scene)
@@ -25,6 +26,7 @@
 			</li>
             @endforeach
         </ul>
+        </div>
         @endforeach
   </div>
 <a href="scenes/create" class="no-print">new Scene</a>
