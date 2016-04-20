@@ -4,9 +4,10 @@
 <div class="no-print">List by <a href="scenes?sort=location">Location</a> <a href="scenes?sort=story">Story Order</a> <a href="scenes?sort=shoot%20day">Shooting Day</a></div>
 
 <a href="scenes/create" class="no-print">new Scene</a>
-	<ul class="strips">
+	<div class="strips">
 		@foreach ($scenes as $key => $scns)
-		<h3>{{ $key }}</h3>
+        <h3>{{ $key }}</h3>
+        <ul>
 			@foreach ($scns as $scene)
 			<li>
 				<span class="no-print"><a href ="scenes/{{ $scene->id }}">view</a> <a href="scenes/ {{ $scene->id }}/edit">edit</a></span>
@@ -22,8 +23,9 @@
 				<span class="characters">@foreach ($scene->characters as $cast) {{ $cast->character_name }}, @endforeach </span>
 
 			</li>
-			@endforeach
-			@endforeach
-  </ul>
+            @endforeach
+        </ul>
+        @endforeach
+  </div>
 <a href="scenes/create" class="no-print">new Scene</a>
 @endsection

@@ -59,11 +59,15 @@ div.main a:hover{
 }
 
 /** Scene Strips**/
+.strips h3 {
+  margin: 20px 0 8px 45px;
+}
+
 .strips {
   font-size: small;
 }
 
-.strips>li {
+.strips li {
   border: solid 1px black;
   list-style: none;
   padding: 0 6px;
@@ -305,5 +309,8 @@ input:not([type]) {
 @media print{
   .no-print {
     display: none !important;
+  }
+  h3+ul {
+    page-break-inside: avoid;
   }
 }
