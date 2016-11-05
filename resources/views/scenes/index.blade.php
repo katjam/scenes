@@ -17,7 +17,7 @@
 
 				<span class="scn-no">{{ $scene->scn_no }}</span>
 				<span class="set-desc">
-					<span class="setting">{{ $scene->int_ext }}. {{ $scene->setting->set_name }} - {{ $scene->day_night }}</span>
+					<span class="setting">{{ $scene->int_ext }}. {{ $scene->setting->loc_set_name }} - {{ $scene->day_night }}</span>
 					<span class="description">{{ $scene->description }}</span>
 				</span>
 				<span class="eights">

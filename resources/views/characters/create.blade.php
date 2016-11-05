@@ -29,7 +29,7 @@
     {!! Form::label('contact', 'Contact') !!}
     {!! Form::text('contact') !!}
 
-    {!! Form::submit('Update Setting') !!}
+    {!! Form::submit('Update Character') !!}
 
 {!! Form::close() !!}
 @endsection
