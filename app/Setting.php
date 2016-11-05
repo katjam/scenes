@@ -6,9 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Setting extends Model
 {
-    protected $fillable = array('set_name', 'location', 'notes');
+    protected $fillable = ['set_name', 'location', 'notes'];
 
-    public function scenes() {
+    protected $appends = ['loc_set_name'];
+
+    public function scenes()
+    {
       return $this->hasMany('Scenes\Scene');
+    }
+
+    public function getLocSetNameAttribute()
+    {
+        return $this->location . ' - ' . $this->set_name;
     }
 }
