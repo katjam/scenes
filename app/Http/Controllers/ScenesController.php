@@ -37,8 +37,10 @@ class ScenesController extends Controller
 				}
 			  if (preg_match('/e$/', $scene['scn_no'])) {
 				  return intval($scene['scn_no']) + 0.5;
-				} else {
-
+              }
+              if (preg_match('/f$/', $scene['scn_no'])) {
+				  return intval($scene['scn_no']) + 0.6;
+              } else {
 					return intval($scene['scn_no']);
 			  }
 			});
