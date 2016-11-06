@@ -27,6 +27,10 @@
       {!! Form::radio('day_night', 'night', false) !!}
     </div>
     <div class="radio">
+      {!! Form::label('day_night', 'Evening') !!}
+      {!! Form::radio('day_night', 'evening', false) !!}
+    </div>
+    <div class="radio">
       {!! Form::label('day_night', 'Dawn') !!}
       {!! Form::radio('day_night', 'dawn', false) !!}
     </div>
