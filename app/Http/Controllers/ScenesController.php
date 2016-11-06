@@ -111,10 +111,13 @@ class ScenesController extends Controller
      */
     public function edit(Scene $scene)
     {
-      $settings = \Scenes\Setting::lists('set_name', 'id');
-      $all_characters = \Scenes\Character::all();
-      $scn_chars = $scene->characters->lists('id')->all();
-      return view('scenes.edit', compact('settings', 'scene', 'all_characters', 'scn_chars'));
+        $settings = DB::table('settings')
+            ->select(DB::raw('CONCAT_WS(" - ", location, set_name) as loc_set_name, id'))
+            ->lists('loc_set_name', 'id');
+        asort($settings);
+        $all_characters = \Scenes\Character::all();
+        $scn_chars = $scene->characters->lists('id')->all();
+        return view('scenes.edit', compact('settings', 'scene', 'all_characters', 'scn_chars'));
     }
 
     /**
