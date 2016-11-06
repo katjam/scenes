@@ -70,8 +70,9 @@ class ScenesController extends Controller
         $settings = DB::table('settings')
             ->select(DB::raw('CONCAT_WS(" - ", location, set_name) as loc_set_name, id'))
             ->lists('loc_set_name', 'id');
-      $characters = \Scenes\Character::all();
-      return view('scenes.create', compact('settings', 'characters'));
+        $characters = \Scenes\Character::all();
+        asort($settings);
+        return view('scenes.create', compact('settings', 'characters'));
     }
 
     /**
