@@ -11,7 +11,7 @@
         <li>
             <span class="scn-no">{{ $scn->scn_no }}</span>
             <span class="set-desc">
-                <span class="setting">{{ $scn->int_ext }}. {{ $scn->setting->set_name }} - {{ $scn->day_night }}</span>
+                <span class="setting">{{ $scn->int_ext }}. {{ $scn->setting->loc_set_name }} - {{ $scn->day_night }}</span>
                 <span class="description">{{ $scn->description }}</span>
             </span>
             <span class="eights">
