@@ -89,8 +89,8 @@ footer p {
 }
 
 .strips h2 {
-  margin-top: 25px;
-  margin-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .strips h3 {
@@ -100,6 +100,9 @@ footer p {
 
 .strips {
   font-size: small;
+  background: #fff;
+  margin: 10px 0;
+  padding: 10px 0;
 }
 
 .strips li {
@@ -107,6 +110,10 @@ footer p {
   list-style: none;
   padding: 0 6px;
   width: 900px;
+}
+
+.strips li a:first-child {
+  margin-left: 0 !important;
 }
 
 .strips span {
