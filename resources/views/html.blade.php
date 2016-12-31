@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Scenes</title>
+  <title>Scenes - {{ env('SITE_NAME') }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="author" content="Katjam">
   <meta name="description" content="Scenes - First Pass breakdown and scheduling aid.">
@@ -20,10 +20,13 @@
 
   <nav class="main no-print">
     <div class="container">
-      <a href="/" class="brand">
-      SCENES LOGO
+      <a href="/scenes" class="brand">
+      <img src="/logo.png">
       </a>
-        @include('partials.main-nav')
+        <div class="title-menu">
+          <div class="site-title">{{ env('SITE_NAME', 'add SITE_NAME to .env') }}</div>
+          @include('partials.main-nav')
+        </div>
     </div>
   </nav>
   <div class="main">
@@ -31,8 +34,7 @@
   </div>
 
   <footer class="main no-print">
-    <p>Scenes is a trademark of Katjam. Copyright &copy; Katja Mordaunt.</p>
-    <p class="less-significant"><a href="http://katj.am">Design by Katja Mordaunt</a></p>
+    <p>&copy;<a href="http://katj.am"> Katja Mordaunt<a></p>
   </footer>
 
 

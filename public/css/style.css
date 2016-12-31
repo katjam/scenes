@@ -10,24 +10,36 @@ a {
   text-decoration: none;
 }
 
-nav .container .brand {
-  float: left;
-  width: 25%;
+nav, footer {
+  padding: 8px;
+  background: cadetblue;
+}
+
+nav img {
+  width: 140px;
+}
+
+nav .title-menu {
+  display: inline-block;
+}
+
+.site-title  {
+  font-size: 42px;
 }
 
 ul.main-nav {
- display:block;
- float: right;
-  width: 70%;
+  display: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 ul.main-nav li {
   list-style: none;
   float:left;
-  width: 170px;
+  width: 160px;
   background: slategrey;
-  margin: 2px;
-  padding: 8px;
+  margin: 4px;
+  padding: 8px 0;
   text-align: center;
 }
 
@@ -47,15 +59,22 @@ div.main {
 
 div.main a {
   background: cadetblue;
-  font-size: small;
-  color: palegreen;
-  padding: 1px 5px;
-  margin-left: 4px;
-  border-radius: 10px;
+  font-size: 10px;
+  color: #000;
+  padding: 3px 6px;
+  border-radius: 5px;
 }
 
 div.main a:hover{
   color: pink;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+footer p {
+  font-size: 8px;
 }
 
 /** Scene Strips**/

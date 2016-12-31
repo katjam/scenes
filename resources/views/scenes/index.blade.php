@@ -1,6 +1,6 @@
 @extends('html')
 @section('content')
-<h1>{{ env('SITE_NAME', 'Please add SITE_NAME to .env') }} - Scenes by {{ Input::get('sort') }}
+<h1>Scenes by {{ Input::get('sort') }}
 </h1>
 <div class="no-print">List by <a href="scenes?sort=location">Location</a> <a href="scenes?sort=story">Story Order</a> <a href="scenes?sort=shoot%20day">Shooting Day</a></div>
 
