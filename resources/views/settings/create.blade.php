@@ -5,7 +5,7 @@
 
     <!--set name -->
     {!! Form::label('set_name', 'Set Name') !!}
-    {!! Form::text('set_name') !!}
+    {!! Form::text('set_name', null, array('autofocus')) !!}
 
     <!-- location -->
     {!! Form::label('location', 'Location') !!}
