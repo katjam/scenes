@@ -5,7 +5,7 @@
 
     <!--set name -->
     {!! Form::label('character_name', 'Character Name') !!}
-    {!! Form::text('character_name') !!}
+    {!! Form::text('character_name', null, array('autofocus')) !!}
 
     <!-- cast type -->
     <div>
