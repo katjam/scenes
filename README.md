@@ -1,17 +1,21 @@
-__Scenes is a breakdown and scheduling tool__
+# Scenes is a breakdown and scheduling tool
+__Created using Laravel__
 
+__To set up a new instance__
 
-# Get instance set up
+1- composer install
+2- mysql user and DB (or sqlite)
+3- create .env from example
+4- php artisan key:generate
+5- php artisan migrate
+6- sudo chown -R http:http storage
 
-- composer install
+__For development__
 
-- OR - 
+- npm install
+
+__To install composer__
 
 - curl -sS https://getcomposer.org/installer | php
 - php composer.phar install
 
-- mysql user and DB (or sqlite)
-- create .env from example
-- php artisan key:generate
-- php artisan migrate
-- sudo chown -R http:http storage
