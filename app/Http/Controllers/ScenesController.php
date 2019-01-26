@@ -116,7 +116,8 @@ class ScenesController extends Controller
     {
         $settings = DB::table('settings')
             ->select(DB::raw('CONCAT_WS(" - ", location, set_name) as loc_set_name, id'))
-            ->pluck('loc_set_name', 'id');
+            ->pluck('loc_set_name', 'id')
+            ->all();
         asort($settings);
         $all_characters = \Scenes\Character::all();
         $scn_chars = $scene->characters->pluck('id')->all();
