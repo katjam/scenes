@@ -120,7 +120,7 @@ footer p {
 
 .strips span {
   display: inline-block;
-  padding: 4px;
+  padding: 0 6px;
 }
 
 .strips .scn-no {
@@ -132,6 +132,7 @@ footer p {
   width: 500px;
   border-right: solid 1px black;
   border-left: solid 1px black;
+  height: 70px;
 }
 
 .strips .setting {
@@ -262,7 +263,6 @@ input[type="number"] {
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #666;
 }
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {

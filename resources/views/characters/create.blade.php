@@ -9,12 +9,12 @@
 
     <!-- cast type -->
     <div>
-      {!! Form::label('cast_type', 'main') !!}
-      {!! Form::radio('cast_type', 'main', false) !!}
+      <input name="cast_type" type="radio" id="main" value="main">
+      <label for="main">main</label>
     </div>
     <div>
-      {!! Form::label('cast_type', 'supporting') !!}
-      {!! Form::radio('cast_type', 'supporting', false) !!}
+      <input name="cast_type" type="radio" id="supporting" value="supporting">
+      <label for="supporting">supporting</label>
     </div>
 
     <!-- description -->

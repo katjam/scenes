@@ -27,27 +27,27 @@
     <!--  day night -->
     <div>
       <div class="radio">
-        <input name="day_night" type="radio" id="day" value="day">
+        <input name="day_night" type="radio" id="day" value="day" {{$scene->day_night == 'day' ? 'checked' : ''}}>
         <label for="day">Day</label>
         <span class="check"></span>
       </div>
       <div class="radio">
-        <input name="day_night" type="radio" id="night" value="night">
+        <input name="day_night" type="radio" id="night" value="night" {{$scene->day_night == 'night' ? 'checked' : ''}}>
         <label for="night">Night</label>
         <span class="check"></span>
       </div>
       <div class="radio">
-        <input name="day_night" type="radio" id="evening" value="evening">
+        <input name="day_night" type="radio" id="evening" value="evening" {{$scene->day_night == 'evening' ? 'checked' : ''}}>
         <label for="evening">Evening</label>
         <span class="check"></span>
       </div>
       <div class="radio">
-        <input name="day_night" type="radio" id="dawn" value="dawn">
+        <input name="day_night" type="radio" id="dawn" value="dawn" {{$scene->day_night == 'dawn' ? 'checked' : ''}}>
         <label for="dawn">Dawn</label>
         <span class="check"></span>
       </div>
       <div class="radio">
-        <input name="day_night" type="radio" id="dusk" value="dusk">
+        <input name="day_night" type="radio" id="dusk" value="dusk" {{$scene->day_night == 'dusk' ? 'checked' : ''}}>
         <label for="dusk">Dusk</label>
         <span class="check"></span>
       </div>
