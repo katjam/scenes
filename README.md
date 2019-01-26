@@ -12,7 +12,7 @@ __To set up a new instance__
 
 __For development__
 
-- npm install
+- yarn install
 
 __To install composer__
 

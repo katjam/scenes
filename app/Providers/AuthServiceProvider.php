@@ -15,17 +15,4 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         'Scenes\Model' => 'Scenes\Policies\ModelPolicy',
     ];
-
-    /**
-     * Register any application authentication / authorization services.
-     *
-     * @param  \Illuminate\Contracts\Auth\Access\Gate  $gate
-     * @return void
-     */
-    public function boot(GateContract $gate)
-    {
-        $this->registerPolicies($gate);
-
-        //
-    }
 }
