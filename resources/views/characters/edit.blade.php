@@ -10,12 +10,12 @@
 
     <!-- cast type -->
     <div class="radio">
-    {!! Form::label('cast_type', 'Main') !!}
-    {!! Form::radio('cast_type', 'main', false) !!}
+      <input name="cast_type" type="radio" id="main" value="main" {{ $character->cast_type == 'main' ? 'checked' : '' }} >
+      <label for="main">main</label>
     </div>
     <div class="radio">
-    {!! Form::label('cast_type', 'Supporting') !!}
-    {!! Form::radio('cast_type', 'supporting', false) !!}
+      <input name="cast_type" type="radio" id="supporting" value="supporting" {{ $character->cast_type == 'supporting' ? 'checked' : '' }} >
+      <label for="supporting">supporting</label>
     </div>
 
     <!-- description -->
