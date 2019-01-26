@@ -12,36 +12,46 @@
     {!! Form::select('setting_id', $settings) !!}
 
     <!-- int ext -->
-    <div class="radio">
-      {!! Form::label('int_ext', 'Int') !!}
-      {!! Form::radio('int_ext', 'INT', false) !!}
+    <div>
+      <div class="radio">
+        <input name="int_ext" type="radio" id="int" value="INT" {{$scene->int_ext == 'INT' ? 'checked' : ''}}>
+        <label for="int">Int</label>
+        <span class="check"></span>
+      </div>
+      <div class="radio">
+        <input name="int_ext" type="radio" id="ext" value="EXT" {{$scene->int_ext == 'EXT' ? 'checked' : ''}}>
+        <label for="ext">Ext</label>
+        <span class="check"></span>
+      </div>
     </div>
-    <div class="radio">
-      {!! Form::label('int_ext', 'Ext') !!}
-      {!! Form::radio('int_ext', 'EXT', false) !!}
+    <!--  day night -->
+    <div>
+      <div class="radio">
+        <input name="day_night" type="radio" id="day" value="day">
+        <label for="day">Day</label>
+        <span class="check"></span>
+      </div>
+      <div class="radio">
+        <input name="day_night" type="radio" id="night" value="night">
+        <label for="night">Night</label>
+        <span class="check"></span>
+      </div>
+      <div class="radio">
+        <input name="day_night" type="radio" id="evening" value="evening">
+        <label for="evening">Evening</label>
+        <span class="check"></span>
+      </div>
+      <div class="radio">
+        <input name="day_night" type="radio" id="dawn" value="dawn">
+        <label for="dawn">Dawn</label>
+        <span class="check"></span>
+      </div>
+      <div class="radio">
+        <input name="day_night" type="radio" id="dusk" value="dusk">
+        <label for="dusk">Dusk</label>
+        <span class="check"></span>
+      </div>
     </div>
-     <!--  day night -->
-    <div class="radio">
-      {!! Form::label('day_night', 'Day') !!}
-      {!! Form::radio('day_night', 'day', false) !!}
-    </div>
-    <div class="radio">
-      {!! Form::label('day_night', 'Night') !!}
-      {!! Form::radio('day_night', 'night', false) !!}
-    </div>
-    <div class="radio">
-      {!! Form::label('day_night', 'Evening') !!}
-      {!! Form::radio('day_night', 'evening', false) !!}
-    </div>
-    <div class="radio">
-      {!! Form::label('day_night', 'Dawn') !!}
-      {!! Form::radio('day_night', 'dawn', false) !!}
-    </div>
-    <div class="radio">
-      {!! Form::label('day_night', 'Dusk') !!}
-      {!! Form::radio('day_night', 'dusk', false) !!}
-    </div>
-
     <!-- page count -->
     {!! Form::label('page_count', 'Page Count Eights') !!}
     {!! Form::number('page_count') !!} /8
