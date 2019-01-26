@@ -1,4 +1,4 @@
-# Scenes is a breakdown and scheduling tool
+# Scenes is a breakdown and scheduling tool.
 __Created using Laravel__
 
 __To set up a new instance__
