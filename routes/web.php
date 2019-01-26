@@ -17,7 +17,7 @@ Route::model('settings', 'Scenes\Setting');
 Route::model('characters', 'Scenes\Character');
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('scenes');
 });
 
 Route::resource('scenes', 'ScenesController');

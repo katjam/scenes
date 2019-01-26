@@ -5,7 +5,7 @@
 
     <!-- scn number -->
     {!! Form::label('scn_no', 'Scene Number') !!}
-    {!! Form::text('scn_no', null, array('autofocus')) !!}
+    {!! Form::text('scn_no', $next) !!}
     <label>Setting</label>
     {!! Form::select('setting_id', $settings) !!}
     <!-- int ext -->

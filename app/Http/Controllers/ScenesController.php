@@ -75,7 +75,9 @@ class ScenesController extends Controller
             ->all();
         $characters = \Scenes\Character::all();
         asort($settings);
-        return view('scenes.create', compact('settings', 'characters'));
+        // Todo this will need to be more sophisticated.
+        $next = \Scenes\Scene::count() + 1;
+        return view('scenes.create', compact('settings', 'characters', 'next'));
     }
 
     /**
