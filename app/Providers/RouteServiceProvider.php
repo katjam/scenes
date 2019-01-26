@@ -25,9 +25,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Route::model('scene', 'App\Scene');
-        Route::model('setting', 'App\Setting');
-        Route::model('character', 'App\Character');
+        Route::model('scene', 'Scenes\Scene');
+        Route::model('setting', 'Scenes\Setting');
+        Route::model('character', 'Scenes\Character');
     }
 
     /**
