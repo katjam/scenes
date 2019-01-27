@@ -6,18 +6,19 @@
     <p>{{ $character->description }}</p>
     <p>{{ $character->actor }}</p>
     <p>{{ $character->contact }}</p>
-    <ul class="strips">
+    <div class="strips">
+      <div class="strip-wrapper">
         @foreach ($scns as $scn)
-        <li>
-            <span class="scn-no">{{ $scn->scn_no }}</span>
-            <span class="set-desc">
-                <span class="setting">{{ $scn->int_ext }}. {{ $scn->setting->loc_set_name }} - {{ $scn->day_night }}</span>
-                <span class="description">{{ $scn->description }}</span>
-            </span>
-            <span class="eights">
-                {{ $scn->page_eights() }}
-            </span>
-        </li>
+          <div class="no-print"></div>
+          <div class="scn-no">{{ $scn->scn_no }}</div>
+          <div class="set-desc">
+            <div class="setting">{{ $scn->int_ext }}. {{ $scn->setting->loc_set_name }} - {{ $scn->day_night }}</div>
+            <div class="description">{{ $scn->description }}</div>
+          </div>
+          <div class="eights">
+              {{ $scn->page_eights() }}
+          </div>
         @endforeach
-    </ul>
+      </div>
+    </div>
 @endsection

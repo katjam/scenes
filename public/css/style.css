@@ -84,69 +84,57 @@ footer p {
   font-size: 8px;
 }
 
-/** Scene Strips**/
-.strips h2,
-.strips h3 {
-  margin-left: 45px;
+/** Strips grid **/
+
+.strip-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 7fr 2fr;
 }
 
-.strips h2 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+* {box-sizing: border-box;}
 
-.strips h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+.strip-wrapper > div {
+  background: #fff;
+  border: solid 1px black;
+  list-style: none;
+  margin: 3px 0;
+  min-height: 50px;
+  padding: 2px 6px;
 }
 
 .strips {
   font-size: small;
-  background: #fff;
-  margin: 10px 0;
-  padding: 10px 0;
+  background: #eee;
+  line-height: 1.2;
+  margin: 10px;
+  padding: 10px;
 }
 
-.strips li {
-  border: solid 1px black;
-  list-style: none;
-  padding: 0 6px;
-  width: 900px;
-}
-
-.strips li a:first-child {
-  margin-left: 0 !important;
-}
-
-.strips span {
-  display: inline-block;
-  padding: 0 6px;
+.strips .no-print a {
+  font-size: x-small;
+  padding: 2px 4px;
 }
 
 .strips .scn-no {
   font-size: x-large;
-  width: 50px;
 }
 
 .strips .set-desc {
-  width: 500px;
-  border-right: solid 1px black;
-  border-left: solid 1px black;
-  height: 70px;
 }
 
 .strips .setting {
   text-transform: uppercase;
-  padding: 0;
 }
 
 .strips .description {
-  display: block;
   font-size: x-small;
 }
 
+.strips .eights {
+}
+
 .strips .characters {
-  max-width: 170px;
+  font-size: x-small;
 }
 
 /** Forms **/
