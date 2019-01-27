@@ -2,9 +2,14 @@
 @section('content')
 <h1>Scenes by {{ Input::get('sort') }}
 </h1>
-<div class="no-print">List by <a href="scenes?sort=location">Location</a> <a href="scenes?sort=story">Story Order</a> <a href="scenes?sort=shoot%20day">Shooting Day</a></div>
-
 <a href="scenes/create" class="no-print">new Scene</a>
+<div class="no-print sort">
+  List by
+  <a href="scenes?sort=location">Location</a>
+  <a href="scenes?sort=story">Story Order</a>
+  <a href="scenes?sort=shoot%20day">Shooting Day</a>
+</div>
+
 	<div class="strips">
 		@foreach ($scenes as $key => $scns)
         <div class="no-break">
