@@ -55,7 +55,7 @@ ul.main-nav li a:hover {
 div.main {
   clear: both;
   min-height: 400px;
-  background: pink;
+  background: lightgrey;
   padding: 10px;
 }
 
@@ -68,7 +68,7 @@ div.main a {
 }
 
 div.main a:hover{
-  color: pink;
+  color: lightgrey;
 }
 
 div.main li a:first-child {
@@ -84,69 +84,74 @@ footer p {
   font-size: 8px;
 }
 
-/** Scene Strips**/
-.strips h2,
-.strips h3 {
-  margin-left: 45px;
+/** Sort order **/
+.no-print.sort a:link {
+  background: none;
+  border-radius: 0;
+  color: cadetblue;
+  font-size: medium;
 }
 
-.strips h2 {
-  margin-top: 0;
-  margin-bottom: 0;
+.no-print.sort a:focus,
+.no-print.sort a:hover,
+.no-print.sort a:active,
+.no-print.sort a:visited {
+  border-bottom: solid 2px cadetblue;
+  color: cadetblue;
 }
 
-.strips h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+/** Strips grid **/
+
+.strip-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 7fr 2fr;
+}
+
+* {box-sizing: border-box;}
+
+.strip-wrapper > div {
+  background: #fff;
+  border: solid 1px black;
+  list-style: none;
+  margin: 3px 0;
+  min-height: 50px;
+  padding: 2px 6px;
 }
 
 .strips {
   font-size: small;
-  background: #fff;
-  margin: 10px 0;
-  padding: 10px 0;
+  background: #eee;
+  line-height: 1.2;
+  margin: 10px;
+  max-width: 1040px;
+  padding: 10px;
 }
 
-.strips li {
-  border: solid 1px black;
-  list-style: none;
-  padding: 0 6px;
-  width: 900px;
-}
-
-.strips li a:first-child {
-  margin-left: 0 !important;
-}
-
-.strips span {
-  display: inline-block;
-  padding: 0 6px;
+.strips .no-print a {
+  font-size: x-small;
+  padding: 2px 4px;
 }
 
 .strips .scn-no {
   font-size: x-large;
-  width: 50px;
 }
 
 .strips .set-desc {
-  width: 500px;
-  border-right: solid 1px black;
-  border-left: solid 1px black;
-  height: 70px;
 }
 
 .strips .setting {
   text-transform: uppercase;
-  padding: 0;
 }
 
 .strips .description {
-  display: block;
   font-size: x-small;
 }
 
+.strips .eights {
+}
+
 .strips .characters {
-  max-width: 170px;
+  font-size: x-small;
 }
 
 /** Forms **/
@@ -281,7 +286,7 @@ input[type="number"] {
     content: '';
     width: 12px;
     height: 12px;
-    background: cadetBlue;
+    background: cadetblue;
     position: absolute;
     top: 4px;
     left: 4px;
