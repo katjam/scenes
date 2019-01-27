@@ -55,7 +55,7 @@ ul.main-nav li a:hover {
 div.main {
   clear: both;
   min-height: 400px;
-  background: pink;
+  background: lightgrey;
   padding: 10px;
 }
 
@@ -68,7 +68,7 @@ div.main a {
 }
 
 div.main a:hover{
-  color: pink;
+  color: lightgrey;
 }
 
 div.main li a:first-child {
@@ -88,15 +88,16 @@ footer p {
 .no-print.sort a:link {
   background: none;
   border-radius: 0;
-  color: cadetBlue;
+  color: cadetblue;
+  font-size: medium;
 }
 
 .no-print.sort a:focus,
 .no-print.sort a:hover,
 .no-print.sort a:active,
 .no-print.sort a:visited {
-  border-bottom: solid 2px cadetBlue;
-  color: cadetBlue;
+  border-bottom: solid 2px cadetblue;
+  color: cadetblue;
 }
 
 /** Strips grid **/
@@ -285,7 +286,7 @@ input[type="number"] {
     content: '';
     width: 12px;
     height: 12px;
-    background: cadetBlue;
+    background: cadetblue;
     position: absolute;
     top: 4px;
     left: 4px;
