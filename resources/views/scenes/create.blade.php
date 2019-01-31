@@ -54,8 +54,11 @@
     {!! Form::number('page_count', '') !!} /8
 
     <label>Characters</label>
-    @foreach ($characters as $character)
-    <div>{!! Form::checkbox('character_id[]', $character->id) !!} {!! $character->character_name !!}</div>
+    @foreach ($char_sort as $type => $chars)
+    <h3>{{ $type }}</h3>
+      @foreach ($chars as $character)
+      <div>{!! Form::checkbox('character_id[]', $character->id) !!} {!! $character->character_name !!}</div>
+      @endforeach
     @endforeach
 
     <!-- description -->

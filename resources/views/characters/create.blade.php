@@ -16,6 +16,14 @@
       <input name="cast_type" type="radio" id="supporting" value="supporting">
       <label for="supporting">supporting</label>
     </div>
+    <div>
+      <input name="cast_type" type="radio" id="extras" value="extras">
+      <label for="extras">extras</label>
+    </div>
+    <div>
+      <input name="cast_type" type="radio" id="vehicle" value="vehicle">
+      <label for="vehicle">vehicle</label>
+    </div>
 
     <!-- description -->
     {!! Form::label('description', 'Description') !!}

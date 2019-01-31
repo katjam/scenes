@@ -93,9 +93,13 @@ class ScenesController extends Controller
             ->pluck('loc_set_name', 'id')
             ->all();
         $characters = \Scenes\Character::all();
+        $char_sort = [];
+        foreach ($characters as $c) {
+          $char_sort[$c->cast_type][] = $c;
+        }
         asort($settings);
         $next = (int) \Scenes\Scene::all()->last()->scn_no + 1;
-        return view('scenes.create', compact('settings', 'characters', 'next'));
+        return view('scenes.create', compact('settings', 'char_sort', 'next'));
     }
 
     /**

@@ -17,7 +17,14 @@
       <input name="cast_type" type="radio" id="supporting" value="supporting" {{ $character->cast_type == 'supporting' ? 'checked' : '' }} >
       <label for="supporting">supporting</label>
     </div>
-
+    <div class="radio">
+      <input name="cast_type" type="radio" id="extras" value="extras" {{ $character->cast_type == 'extras' ? 'checked' : '' }} >
+      <label for="extras">extras</label>
+    </div>
+    <div class="radio">
+      <input name="cast_type" type="radio" id="vehicle" value="vehicle" {{ $character->cast_type == 'vehicle' ? 'checked' : '' }} >
+      <label for="vehicle">vehicle</label>
+    </div>
     <!-- description -->
     {!! Form::label('description', 'Description') !!}
     {!! Form::textarea('description') !!}
