@@ -56,9 +56,15 @@
     <label>Characters</label>
     @foreach ($char_sort as $type => $chars)
     <h3>{{ $type }}</h3>
-      @foreach ($chars as $character)
-      <div>{!! Form::checkbox('character_id[]', $character->id) !!} {!! $character->character_name !!}</div>
-      @endforeach
+      <div>
+        @foreach ($chars as $character)
+        <div class="radio">
+          <input name="character_id[]" type="checkbox" id="{{$character->id}}" value="{{$character->id}}" >
+          <label for="{{$character->id}}">{{$character->character_name}}</label>
+          <span class="check"></span>
+        </div>
+        @endforeach
+      </div>
     @endforeach
 
     <!-- description -->

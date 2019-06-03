@@ -255,11 +255,16 @@ input[type="number"] {
   display: inline-block;
 }
 
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked),
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
     left: -9999px;
 }
+
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label,
 [type="radio"]:checked + label,
 [type="radio"]:not(:checked) + label
 {
@@ -269,6 +274,9 @@ input[type="number"] {
     line-height: 20px;
     display: inline-block;
 }
+
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before,
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
     content: '';
@@ -281,6 +289,9 @@ input[type="number"] {
     border-radius: 100%;
     background: #fff;
 }
+
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after,
 [type="radio"]:checked + label:after,
 [type="radio"]:not(:checked) + label:after {
     content: '';
@@ -294,11 +305,22 @@ input[type="number"] {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
+
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after {
+  border-radius: 0;
+}
+
+[type="checkbox"]:not(:checked) + label:after,
 [type="radio"]:not(:checked) + label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
+
+[type="checkbox"]:checked + label:after,
 [type="radio"]:checked + label:after {
     opacity: 1;
     -webkit-transform: scale(1);

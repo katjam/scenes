@@ -58,10 +58,15 @@
 
     <label>Characters</label>
 
+    <div>
     @foreach ($all_characters as $character)
-    <div>{!! Form::checkbox('character_id[]', $character->id, in_array($character->id, $scn_chars)) !!} {!! $character->character_name !!}</div>
+      <div class="radio">
+        <input name="character_id[]" type="checkbox" id="{{$character->id}}" value="{{$character->id}}" {!! in_array($character->id, $scn_chars) ? 'checked' : '' !!}>
+        <label for="{{$character->id}}">{{$character->character_name}}</label>
+        <span class="check"></span>
+      </div>
     @endforeach
-
+    </div>
     <!-- description -->
     {!! Form::label('description', 'Description') !!}
     {!! Form::textarea('description') !!}
