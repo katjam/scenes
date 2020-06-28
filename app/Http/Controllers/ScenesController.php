@@ -143,9 +143,14 @@ class ScenesController extends Controller
             ->pluck('loc_set_name', 'id')
             ->all();
         asort($settings);
-        $all_characters = \Scenes\Character::all();
+        $characters = \Scenes\Character::all();
+        $char_sort = [];
+        foreach ($characters as $c) {
+          $char_sort[$c->cast_type][] = $c;
+        }
+
         $scn_chars = $scene->characters->pluck('id')->all();
-        return view('scenes.edit', compact('settings', 'scene', 'all_characters', 'scn_chars'));
+        return view('scenes.edit', compact('settings', 'scene', 'char_sort', 'scn_chars'));
     }
 
     /**

@@ -57,16 +57,19 @@
     {!! Form::number('page_count') !!} /8
 
     <label>Characters</label>
-
-    <div>
-    @foreach ($all_characters as $character)
-      <div class="radio">
-        <input name="character_id[]" type="checkbox" id="{{$character->id}}" value="{{$character->id}}" {!! in_array($character->id, $scn_chars) ? 'checked' : '' !!}>
-        <label for="{{$character->id}}">{{$character->character_name}}</label>
-        <span class="check"></span>
+    @foreach ($char_sort as $type => $chars)
+    <h3>{{ $type }}</h3>
+      <div>
+        @foreach ($chars as $character)
+        <div class="radio">
+          <input name="character_id[]" type="checkbox" id="{{$character->id}}" value="{{$character->id}}" >
+          <label for="{{$character->id}}">{{$character->character_name}}</label>
+          <span class="check"></span>
+        </div>
+        @endforeach
       </div>
     @endforeach
-    </div>
+
     <!-- description -->
     {!! Form::label('description', 'Description') !!}
     {!! Form::textarea('description') !!}
