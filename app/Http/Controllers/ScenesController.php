@@ -98,7 +98,7 @@ class ScenesController extends Controller
           $char_sort[$c->cast_type][] = $c;
         }
         asort($settings);
-        $next = (int) \Scenes\Scene::all()->last()->scn_no + 1;
+        $next = \Scenes\Scene::all()->count() > 0 ? (int) \Scenes\Scene::all()->last()->scn_no + 1 : 1;
         return view('scenes.create', compact('settings', 'char_sort', 'next'));
     }
 
