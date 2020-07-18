@@ -8,6 +8,11 @@
     <!-- scn number -->
     {!! Form::label('scn_no', 'Scene Number') !!}
     {!! Form::text('scn_no') !!}
+
+    <!-- page count -->
+    {!! Form::label('page_count', 'Page Count Eights') !!}
+    {!! Form::number('page_count') !!} /8
+
     <label>Setting</label>
     {!! Form::select('setting_id', $settings) !!}
 
@@ -52,9 +57,6 @@
         <span class="check"></span>
       </div>
     </div>
-    <!-- page count -->
-    {!! Form::label('page_count', 'Page Count Eights') !!}
-    {!! Form::number('page_count') !!} /8
 
     <label>Characters</label>
     @foreach ($char_sort as $type => $chars)
