@@ -62,7 +62,13 @@
       <div>
         @foreach ($chars as $character)
         <div class="radio">
-          <input name="character_id[]" type="checkbox" id="{{$character->id}}" value="{{$character->id}}" >
+          <input
+            name="character_id[]"
+            type="checkbox"
+            id="{{$character->id}}"
+            value="{{$character->id}}"
+            {{in_array($character->id, $scn_chars) ? "checked" : ""}}
+          >
           <label for="{{$character->id}}">{{$character->character_name}}</label>
           <span class="check"></span>
         </div>
