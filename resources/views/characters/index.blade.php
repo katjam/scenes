@@ -11,11 +11,15 @@
 @section('content')
   <h1>Characters</h1>
   <a href="characters/create">new Character</a>
-  @todo Day out of days and sort by type.
-  <ul>
-  @foreach ($characters as $character)
-    <li>{{ $character->cast_type }} {{ $character->character_name }}<a href="characters/{{ $character->id }}">view</a> <a href="characters/{{ $character->id }}/edit">edit</a></li>
+  @foreach ($char_sort as $type => $characters)
+    <h3>{{$type}}</h3>
+    <ul>
+    @foreach ($characters as $character)
+    <li>(<b>{{\Scenes\Scene::page_count($character->scenes)}}</b>) {{ $character->character_name }}
+      <a href="characters/{{ $character->id }}">view</a> <a href="characters/{{ $character->id }}/edit">edit</a>
+    </li>
+    @endforeach
+    </ul>
   @endforeach
-  </ul>
   <a href="characters/create">new Character</a>
 @endsection

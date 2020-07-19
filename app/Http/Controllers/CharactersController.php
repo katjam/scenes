@@ -20,7 +20,13 @@ class CharactersController extends Controller
     public function index()
     {
       $characters = Character::all();
-      return view('characters.index', compact('characters'));
+
+      $char_sort = [];
+      foreach ($characters as $c) {
+        $char_sort[$c->cast_type][] = $c;
+      }
+
+      return view('characters.index', compact('char_sort'));
     }
 
     /**
