@@ -175,6 +175,22 @@ class ScenesController extends Controller
       return Redirect::to('scenes');
     }
 
+
+    public function schedule()
+    {
+        return view('scenes.schedule');
+    }
+
+    public function schedule_update(Request $request)
+    {
+      $scn = $request->add_scene;
+      $day = $request->to_day;
+      $scene =  Scene::where('scn_no', $scn)->first();
+      $scene->filming_day = $day;
+      $scene->save();
+      return redirect(route('scenes.schedule'));
+    }
+
     /**
      * Remove the specified resource from storage.
      *

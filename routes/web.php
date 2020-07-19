@@ -23,6 +23,15 @@ Route::get('/', function () {
 Route::resource('scenes', 'ScenesController');
 Route::resource('settings', 'SettingsController');
 Route::resource('characters', 'CharactersController');
+Route::get('schedule', [
+    'as' => 'scenes.schedule',
+    'uses' => 'ScenesController@schedule'
+]);
+Route::post('schedule', [
+    'as' => 'scenes.schedule.update',
+    'uses' => 'ScenesController@schedule_update'
+]);
+
 
 // @todo want to slug this instead eventually - use slugs rather than IDs in URLs
 //Route::bind('characters', function($value, $route) {

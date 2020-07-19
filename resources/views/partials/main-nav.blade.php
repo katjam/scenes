@@ -7,5 +7,8 @@
 	</li>
 	<li>
 		<a href="/characters">Characters</a>
-	</li>
+    </li>
+	<li>
+        <a href="/schedule">Schedule</a>
+    </li>
 </ul>
