@@ -1,6 +1,6 @@
 @extends('html')
 @section('content')
-<h1>Scenes by {{ Input::get('sort') }}
+<h1>Scenes by {{ request()->input('sort') }}
 </h1>
 <a href="scenes/create" class="no-print">new Scene</a>
 <div class="no-print sort">
@@ -13,7 +13,7 @@
 		@foreach ($scenes as $key => $scns)
         <div class="no-break">
         <h2>{{ $key }}</h2>
-        <h3>Page count: {{ Scenes\Scene::page_count($scns) }}</h3>
+        <h3>Page count: {{ App\Scene::page_count($scns) }}</h3>
         <div class="strip-wrapper">
         @foreach ($scns as $scene)
           <div class="no-print">

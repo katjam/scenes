@@ -1,14 +1,14 @@
 <?php
 
-namespace Scenes\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
 use Redirect;
 
-use Scenes\Http\Requests;
-use Scenes\Http\Controllers\Controller;
-use Scenes\Setting;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Setting;
 
 class SettingsController extends Controller
 {
@@ -51,7 +51,7 @@ class SettingsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Scenes\Setting $setting
+     * @param  \App\Setting $setting
      * @return \Illuminate\Http\Response
      */
     public function show(Setting $setting)
@@ -69,7 +69,7 @@ class SettingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Scenes\Setting $setting
+     * @param  \App\Setting $setting
      * @return \Illuminate\Http\Response
      */
     public function edit(Setting $setting)
@@ -80,7 +80,7 @@ class SettingsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Scenes\Setting
+     * @param  \App\Setting
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Setting $setting)
@@ -93,7 +93,7 @@ class SettingsController extends Controller
 		/**
 		 * Remove the specified resource from storage.
      *
-     * @param \Scenes\Setting
+     * @param \App\Setting
      * @return \Illuminate\Http\Response
      */
     public function destroy(Setting $setting)

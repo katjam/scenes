@@ -1,7 +1,7 @@
 @extends('html')
 @section('content')
 
-{!! Form::model(new Scenes\Character, array('route' => array('characters.store'))) !!}
+{!! Form::model(new App\Character, array('route' => array('characters.store'))) !!}
 
     <!--set name -->
     {!! Form::label('character_name', 'Character Name') !!}
