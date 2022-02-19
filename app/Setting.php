@@ -1,6 +1,6 @@
 <?php
 
-namespace Scenes;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Setting extends Model
 
     public function scenes()
     {
-      return $this->hasMany('Scenes\Scene');
+      return $this->hasMany('App\Scene');
     }
 
     public function getLocSetNameAttribute()

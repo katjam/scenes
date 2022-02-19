@@ -1,7 +1,7 @@
 @extends('html')
 @section('content')
 
-{!! Form::model(new Scenes\Setting, array('route' => array('settings.store'))) !!}
+{!! Form::model(new App\Setting, array('route' => array('settings.store'))) !!}
 
     <!--set name -->
     {!! Form::label('set_name', 'Set Name') !!}

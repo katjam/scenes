@@ -1,14 +1,14 @@
 <?php
 
-namespace Scenes\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Session;
 use Redirect;
 use Illuminate\Http\Request;
-use Scenes\Scene;
-use Scenes\Character;
-use Scenes\Http\Requests;
-use Scenes\Http\Controllers\Controller;
+use App\Scene;
+use App\Character;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class CharactersController extends Controller
 {
@@ -53,7 +53,7 @@ class CharactersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Scenes\Character
+     * @param  \App\Character
      * @return \Illuminate\Http\Response
      */
     public function show(Character $character)
@@ -66,7 +66,7 @@ class CharactersController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Scenes\Character
+     * @param  \App\Character
      * @return \Illuminate\Http\Response
      */
     public function edit(Character $character)
@@ -77,7 +77,7 @@ class CharactersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Scenes\Character
+     * @param  \App\Character
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Character $character)
@@ -90,7 +90,7 @@ class CharactersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Scenes\Character
+     * @param  \App\Character
      * @return \Illuminate\Http\Response
      */
     public function destroy(Character $character)

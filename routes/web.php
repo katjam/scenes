@@ -1,39 +1,36 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\ScenesController;
+use App\Http\Controllers\CharactersController;
+
+
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
-
-// Provide controller methods with object instead of ID
-Route::model('scenes', 'Scenes\Scene');
-Route::model('settings', 'Scenes\Setting');
-Route::model('characters', 'Scenes\Character');
 
 Route::get('/', function () {
     return redirect('scenes');
 });
 
-Route::resource('scenes', 'ScenesController');
-Route::resource('settings', 'SettingsController');
-Route::resource('characters', 'CharactersController');
-Route::get('schedule', [
-    'as' => 'scenes.schedule',
-    'uses' => 'ScenesController@schedule'
-]);
-Route::post('schedule', [
-    'as' => 'scenes.schedule.update',
-    'uses' => 'ScenesController@schedule_update'
-]);
+Route::resource('scenes', ScenesController::class);
+Route::resource('settings', SettingsController::class);
+Route::resource('characters', CharactersController::class);
+Route::get('schedule', [ScenesController::class, 'schedule'])
+    ->name('scenes.schedule');
+Route::post('schedule', [ScenesController::class, 'schedule_update'])
+    ->name('scenes.schedule.update');
 
 
 // @todo want to slug this instead eventually - use slugs rather than IDs in URLs
 //Route::bind('characters', function($value, $route) {
-// return Scenes\Task::whereCharacterName($value)->first();
+// return App\Task::whereCharacterName($value)->first();
 //});

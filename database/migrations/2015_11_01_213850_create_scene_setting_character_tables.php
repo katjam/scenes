@@ -14,9 +14,9 @@ class CreateSceneSettingCharacterTables extends Migration
     {
       Schema::create('settings', function (Blueprint $table) {
 	      $table->increments('id');
-	      $table->string('set_name')->default('');
-	      $table->string('location')->default('');
-	      $table->text('notes')->default('');
+	      $table->string('set_name')->nullable();
+	      $table->string('location')->nullable();
+	      $table->text('notes')->nullable();
 	      // @todo way of ref to other settings geographically nearby
         $table->timestamps();
 	    });
@@ -24,7 +24,7 @@ class CreateSceneSettingCharacterTables extends Migration
 	      $table->increments('id');
 	      // @todo - film with id of other scenes to group with this one
 	      $table->char('scn_no', 4);
-        $table->text('description')->default('');
+        $table->text('description')->nullable();
         $table->enum('int_ext', ['INT','EXT']);
 	      $table->integer('setting_id')->unsigned()->default(0);
 	      $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
@@ -37,9 +37,9 @@ class CreateSceneSettingCharacterTables extends Migration
 	      $table->increments('id');
 	      $table->string('character_name')->default('')->unique();
         $table->enum('cast_type', ['main', 'supporting']);
-        $table->text('description')->default('');
-	      $table->string('actor')->default('');
-	      $table->text('contact')->default('');
+        $table->text('description')->nullable();
+	      $table->string('actor')->nullable();
+	      $table->text('contact')->nullable();
         $table->timestamps();
 	    });
     }

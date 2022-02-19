@@ -1,14 +1,14 @@
 <?php
 
-namespace Scenes\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Redirect;
 use Illuminate\Http\Request;
-use Scenes\Scene as Scene;
-use Scenes\Character_Scene as Character_Scene;
-use Scenes\Setting as Setting;
-use Scenes\Http\Requests;
-use Scenes\Http\Controllers\Controller;
+use App\Scene as Scene;
+use App\Character_Scene as Character_Scene;
+use App\Setting as Setting;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
@@ -63,7 +63,7 @@ class ScenesController extends Controller
 			  }
 			});
 			// Default collection to sort by scene number
-			$sort = Input::get('sort') ? Input::get('sort') : 'story';
+			$sort = request()->input('sort') ? request()->input('sort') : 'story';
 			switch ($sort) {
 			case('location'):
 			  $scenes = $sort_scenes->groupBy((function ($item, $key) { $setting =  Setting::find($item['setting_id']); return $setting->location . ' ' . $setting->set_name; }))->sortBy(function ($item, $key) { return $key; });
@@ -92,13 +92,13 @@ class ScenesController extends Controller
             ->select(DB::raw('CONCAT_WS(" - ", location, set_name) as loc_set_name, id'))
             ->pluck('loc_set_name', 'id')
             ->all();
-        $characters = \Scenes\Character::all();
+        $characters = \App\Character::all();
         $char_sort = [];
         foreach ($characters as $c) {
           $char_sort[$c->cast_type][] = $c;
         }
         asort($settings);
-        $next = \Scenes\Scene::all()->count() > 0 ? (int) \Scenes\Scene::all()->last()->scn_no + 1 : 1;
+        $next = \App\Scene::all()->count() > 0 ? (int) \App\Scene::all()->last()->scn_no + 1 : 1;
         return view('scenes.create', compact('settings', 'char_sort', 'next'));
     }
 
@@ -122,7 +122,7 @@ class ScenesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Scenes\Scene
+     * @param  \App\Scene
      * @return \Illuminate\Http\Response
      */
     public function show(Scene $scene)
@@ -133,7 +133,7 @@ class ScenesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Scenes\Scene
+     * @param  \App\Scene
      * @return \Illuminate\Http\Response
      */
     public function edit(Scene $scene)
@@ -143,7 +143,7 @@ class ScenesController extends Controller
             ->pluck('loc_set_name', 'id')
             ->all();
         asort($settings);
-        $characters = \Scenes\Character::all();
+        $characters = \App\Character::all();
         $char_sort = [];
         foreach ($characters as $c) {
           $char_sort[$c->cast_type][] = $c;
@@ -156,7 +156,7 @@ class ScenesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Scenes\Scene
+     * @param  \App\Scene
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Scene $scene)
@@ -194,7 +194,7 @@ class ScenesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Scenes\Scene
+     * @param  \App\Scene
      * @return \Illuminate\Http\Response
      */
     public function destroy(Scene $scene)

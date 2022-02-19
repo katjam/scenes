@@ -1,6 +1,6 @@
 <?php
 
-namespace Scenes;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,11 +9,11 @@ class Scene extends Model
   protected $fillable = array('scn_no', 'description', 'int_ext', 'setting_id', 'day_night', 'page_count', 'filming_day');
 
   public function setting() {
-    return $this->belongsTo('Scenes\Setting');
+    return $this->belongsTo('App\Setting');
   }
 
   public function characters() {
-    return $this->belongsToMany('Scenes\Character', 'character_scene', 'scene_id', 'character_id')->withTimestamps();
+    return $this->belongsToMany('App\Character', 'character_scene', 'scene_id', 'character_id')->withTimestamps();
   }
 
   public function page_eights() {

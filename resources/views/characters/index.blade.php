@@ -15,7 +15,7 @@
     <h3>{{$type}}</h3>
     <ul>
     @foreach ($characters as $character)
-    <li>(<b>{{\Scenes\Scene::page_count($character->scenes)}}</b>) {{ $character->character_name }}
+    <li>(<b>{{\App\Scene::page_count($character->scenes)}}</b>) {{ $character->character_name }}
       <a href="characters/{{ $character->id }}">view</a> <a href="characters/{{ $character->id }}/edit">edit</a>
     </li>
     @endforeach
