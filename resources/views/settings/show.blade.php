@@ -7,7 +7,7 @@
     <div class="strips">
       <div class="strip-wrapper">
       @foreach ($setting->scenes as $scn)
-        <div class="no-print"></div>
+        <div>Filming day {{ $scn->filming_day }}</div>
         <div class="scn-no">{{ $scn->scn_no }}</div>
         <div class="set-desc">
           <div class="setting">{{ $scn->int_ext }}. {{ $scn->day_night }}</div>

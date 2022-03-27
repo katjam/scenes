@@ -442,4 +442,13 @@ input:not([type]) {
   .no-break {
     page-break-inside: avoid;
   }
+  h1.print-title {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .strip-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 7fr 3fr;
+  }
 }

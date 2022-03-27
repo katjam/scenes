@@ -30,7 +30,7 @@ class CreateSceneSettingCharacterTables extends Migration
 	      $table->foreign('setting_id')->references('id')->on('settings')->onDelete('cascade');
 	      $table->enum('day_night', ['day', 'night', 'evening', 'dawn', 'dusk']);
         $table->integer('page_count')->unsigned()->default(0);
-        $table->integer('filming_day');
+        $table->integer('filming_day')->nullable();
         $table->timestamps();
       });
       Schema::create('characters', function (Blueprint $table) {

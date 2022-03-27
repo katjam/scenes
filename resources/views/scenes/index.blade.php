@@ -1,6 +1,6 @@
 @extends('html')
 @section('content')
-<h1>Scenes by {{ request()->input('sort') }}
+<h1 class="print-title">Scenes by {{ request()->input('sort') }}
 </h1>
 <a href="scenes/create" class="no-print">new Scene</a>
 <div class="no-print sort">
